@@ -1,0 +1,428 @@
+
+/* =========================================================
+   HeritageMaps - Professional Interface
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: #f3f1eb;
+    color: #2f2a24;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+header {
+    position: relative;
+    z-index: 1000;
+
+    min-height: 86px;
+    padding: 14px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3e3025 0%,
+            #67513b 50%,
+            #8a6a46 100%
+        );
+
+    color: white;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.25);
+
+    text-align: right;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.92;
+}
+
+/* =========================================================
+   Map
+   ========================================================= */
+
+#map {
+    position: relative;
+
+    width: 100%;
+    height: calc(100vh - 86px);
+
+    min-height: 520px;
+
+    background: #ddd;
+}
+
+/* =========================================================
+   Leaflet general
+   ========================================================= */
+
+.leaflet-container {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: #e8e5df;
+}
+
+.leaflet-control-zoom {
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25) !important;
+}
+
+.leaflet-control-zoom a {
+    width: 38px !important;
+    height: 38px !important;
+    line-height: 38px !important;
+
+    background: rgba(255,255,255,0.96) !important;
+    color: #4d3b2b !important;
+
+    font-size: 20px !important;
+
+    border: none !important;
+}
+
+.leaflet-control-zoom a:hover {
+    background: #f1e8db !important;
+}
+
+/* =========================================================
+   Leaflet controls
+   ========================================================= */
+
+.leaflet-control {
+    margin-top: 12px !important;
+    margin-right: 12px !important;
+    margin-left: 12px !important;
+}
+
+.leaflet-control button {
+    font-family: inherit;
+}
+
+/* =========================================================
+   Search and filter panels
+   ========================================================= */
+
+.leaflet-control:has(#heritageSearchInput),
+.leaflet-control:has(#filterButton) {
+    border: none !important;
+}
+
+/* Search box */
+
+#heritageSearchInput {
+    outline: none;
+    transition: 0.2s ease;
+}
+
+#heritageSearchInput:focus {
+    border-color: #8a6a46 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(138,106,70,0.15);
+}
+
+#heritageSearchButton {
+    background: #67513b !important;
+    color: white !important;
+    border: none !important;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+#heritageSearchButton:hover {
+    background: #4e3d2e !important;
+    transform: translateY(-1px);
+}
+
+/* Filter button */
+
+#filterButton {
+    background: #67513b !important;
+    color: white !important;
+    border: none !important;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+#filterButton:hover {
+    background: #4e3d2e !important;
+}
+
+/* Filter menu */
+
+#filterMenu {
+    background: #fffdf9;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#filterMenu label {
+    cursor: pointer;
+    padding: 7px 5px;
+    border-radius: 5px;
+}
+
+#filterMenu label:hover {
+    background: #f3ece2;
+}
+
+#filterMenu input {
+    accent-color: #67513b;
+}
+
+/* =========================================================
+   User location button
+   ========================================================= */
+
+.user-location-button {
+    font-family: inherit !important;
+    font-weight: 600;
+
+    color: #4d3b2b !important;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.user-location-button:hover {
+    background: #f1e8db !important;
+    transform: translateY(-1px);
+}
+
+.user-location-button:active {
+    transform: scale(0.97);
+}
+
+/* =========================================================
+   Popups
+   ========================================================= */
+
+.leaflet-popup-content-wrapper {
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 25px rgba(0,0,0,0.25);
+
+    overflow: hidden;
+}
+
+.leaflet-popup-content {
+    margin: 14px 16px;
+    min-width: 240px;
+    max-width: 360px;
+
+    direction: rtl;
+    text-align: right;
+
+    line-height: 1.7;
+}
+
+.leaflet-popup-tip {
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+}
+
+/* Popup headings */
+
+.leaflet-popup-content h3,
+.leaflet-popup-content h4 {
+    color: #5b432e;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.leaflet-popup-content h3 {
+    font-size: 19px;
+}
+
+.leaflet-popup-content h4 {
+    font-size: 16px;
+}
+
+/* Popup buttons */
+
+.leaflet-popup-content button {
+    font-family: inherit;
+    border-radius: 7px;
+    transition: 0.2s ease;
+}
+
+.leaflet-popup-content button:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.95);
+}
+
+/* =========================================================
+   Images inside popups
+   ========================================================= */
+
+.leaflet-popup-content img {
+    display: block;
+
+    width: 100%;
+    max-width: 330px;
+
+    height: auto;
+    max-height: 220px;
+
+    object-fit: cover;
+
+    margin: 8px auto;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.18);
+}
+
+/* =========================================================
+   Weather box
+   ========================================================= */
+
+.leaflet-popup-content div[style*="background"] {
+    border-radius: 10px !important;
+
+    border: 1px solid #e5ddd2;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,0.06);
+}
+
+/* =========================================================
+   Search result
+   ========================================================= */
+
+#heritageSearchResult {
+    line-height: 1.6;
+}
+
+/* =========================================================
+   Attribution
+   ========================================================= */
+
+.leaflet-control-attribution {
+    font-size: 10px !important;
+
+    background: rgba(255,255,255,0.85) !important;
+
+    padding: 3px 6px !important;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 72px;
+        padding: 10px 15px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    header p {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+
+    #map {
+        height: calc(100vh - 72px);
+        min-height: 450px;
+    }
+
+    .leaflet-control {
+        margin-top: 8px !important;
+        margin-right: 8px !important;
+        margin-left: 8px !important;
+    }
+
+    .leaflet-control:has(#heritageSearchInput) {
+        width: calc(100vw - 90px) !important;
+        max-width: 260px;
+    }
+
+    .leaflet-control:has(#filterButton) {
+        max-width: 180px;
+    }
+
+    #heritageSearchInput {
+        font-size: 13px !important;
+    }
+
+    #heritageSearchButton {
+        font-size: 13px !important;
+    }
+
+    .leaflet-popup-content {
+        min-width: 210px;
+        max-width: 290px;
+        font-size: 13px;
+    }
+
+    .leaflet-popup-content img {
+        max-height: 180px;
+    }
+}
+
+/* =========================================================
+   Very small screens
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 19px;
+    }
+
+    header p {
+        font-size: 11px;
+    }
+
+    #map {
+        min-height: 400px;
+    }
+
+    .leaflet-control-zoom a {
+        width: 34px !important;
+        height: 34px !important;
+        line-height: 34px !important;
+    }
+
+    .leaflet-control:has(#heritageSearchInput) {
+        width: 190px !important;
+    }
+
+    .leaflet-control:has(#filterButton) {
+        width: 150px !important;
+    }
+}
