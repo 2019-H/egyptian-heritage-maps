@@ -102,9 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
             ];
 
             function normalize(text) {
-                return String(text || "")
-                    .toLowerCase()
-                    .replace(/[^a-z0-9\u0600-\u06ff]+/g, "");
+                 return String(text || "")
+                     .toLowerCase()
+            .replace(/[^a-z0-9\u0600-\u06ff]+/g, " ")
+                     .replace(/\s+/g, " ")
+                     .trim();
             }
 
             const values = Object.values(properties)
