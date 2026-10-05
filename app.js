@@ -91,14 +91,14 @@ document.addEventListener("DOMContentLoaded", function () {
         function getSiteImages(properties) {
 
             const images = [
-                "Museum Rosetta.jpg",
-                "Tabyia Al-Abd.jpg",
-                "Port Thonis, Heracleion1.jpg",
-                "Port Thonis, Heracleion2.jpg",
-                "Port Thonis, Heracleion3.jpg",
-                "Port Thonis, Heracleion.jpg",
-                "Antique Tahona.jpg",
-                "Citadle Qitbai.jpg"
+                "museum rosetta.jpg",
+                "tabyia al-abd.jpg",
+                "port thonis, heracleion1.jpg",
+                "port thonis, heracleion2.jpg",
+                "port thonis, heracleion3.jpg",
+                "port thonis, heracleion.jpg",
+                "antique tahona.jpg",
+                "citadle qitbai.jpg"
             ];
 
             function normalize(text) {
