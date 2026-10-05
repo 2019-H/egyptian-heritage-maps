@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 "port thonis, heracleion2.jpg",
                 "port thonis, heracleion3.jpg",
                 "port thonis, heracleion.jpg",
-                "Antique Tahona.jpg",
-                "Citadle Qitbai.jpg"
+                "antique tahona.jpg",
+                "citadle qitbai.jpg"
             ];
 
             function normalize(text) {
