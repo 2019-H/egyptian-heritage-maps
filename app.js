@@ -913,7 +913,7 @@ filterControl.addTo(map);
     // قراءة Heritage Sites
     // =====================================================
 
-    fetch("./HeritageSites_converted.geojson")
+    fetch("./heritagesites_converted.geojson")
 
         .then(function (response) {
 
@@ -954,7 +954,7 @@ filterControl.addTo(map);
     // قراءة Heritage Areas
     // =====================================================
 
-    fetch("./HeritageAreas_converted.geojson")
+    fetch("./heritageareas_converted.geojson")
 
         .then(function (response) {
 
